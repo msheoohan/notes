@@ -1034,6 +1034,52 @@ body .markdown-body
 <ul>
 <li>I&rsquo;d like to use string instead of int to deal with math algorithm problems, because it can simplify overflow cases.</li>
 </ul>
+<h3 id="hash-table-and-hash-set"><a name="user-content-hash-table-and-hash-set" href="#hash-table-and-hash-set" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Hash table and Hash set</h3>
+<p>Hash table is a key-value pairs collection data structure. Given a key, hash table can search the corresponding value in O(1) time. It is a rock star in algorithm problems.<br />
+Hash set is a collection of values where searching for a element by value is very quick.</p>
+<h4 id="usages-of-hash-set"><a name="user-content-usages-of-hash-set" href="#usages-of-hash-set" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Usages of Hash set</h4>
+<ul>
+<li>A bucket when you want to find if an element exists.</li>
+<li>Keep uniqueness of elements in a collection.</li>
+</ul>
+<h4 id="usages-of-hash-table"><a name="user-content-usages-of-hash-table" href="#usages-of-hash-table" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Usages of Hash table</h4>
+<ul>
+<li>
+<p><strong>Reverse array, value to index</strong><br />
+Use value to find location. <em>Why need this?</em> Some question ask you to do some thing related to index or location.</p>
+</li>
+<li>
+<p><strong>Word count</strong><br />
+Key maps to count.</p>
+</li>
+<li>
+<p><strong>Group elements</strong><br />
+Group elements by value or any other properties.</p>
+</li>
+<li>
+<p><strong>Graph</strong><br />
+One simple way to implement graph is to use hash map.</p>
+</li>
+<li>
+<p><strong>Trie</strong><br />
+Hash table can build Trie</p>
+</li>
+<li>
+<p><strong>Use as an object(like js) without functions</strong></p>
+</li>
+</ul>
+<h4 id="implementation-of-hash-table"><a name="user-content-implementation-of-hash-table" href="#implementation-of-hash-table" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Implementation of Hash table</h4>
+<ul>
+<li>Collision<ul>
+<li>Chaining</li>
+<li>Open addressing</li>
+</ul>
+</li>
+<li>Use BST<ul>
+<li>dddd</li>
+</ul>
+</li>
+</ul>
 <h3 id="linked-list-and-array-list"><a name="user-content-linked-list-and-array-list" href="#linked-list-and-array-list" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Linked List and Array List</h3>
 <h4 id="linked-list"><a name="user-content-linked-list" href="#linked-list" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Linked List</h4>
 <p>LinkedList often appears as a problem instead of a good solution to a problem.</p>
@@ -1066,7 +1112,7 @@ b.next = a.next, a.next = b
 </ul>
 <p>Keypoint: Use dummy node as the head pointer. Keep insert node after dummy to push existing list. Don&rsquo;t lose the current node&rsquo;s next node. </p>
 <pre><code>dummy = Node.new
-t = p.next, p.next = dummy.next, dummy.next = p
+    t = p.next, p.next = dummy.next, dummy.next = p
 </code></pre>
 <ul>
 <li>
@@ -1089,20 +1135,27 @@ Avoid to use it if you need to search elements many times.<br />
 Special cases include: LRU(Not the best solution.)</p>
 <h3 id="stack-and-queue"><a name="user-content-stack-and-queue" href="#stack-and-queue" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Stack and Queue</h3>
 <h4 id="stack"><a name="user-content-stack" href="#stack" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Stack</h4>
-<p>Stack is a LIFO(last in first out) data structure. Two classic problems for stack are implementing a stack and implementing min stack.</p>
+<p>Stack is a <strong>LIFO</strong>(Last in First out) data structure. Two classic problems for stack are implementing a stack and implementing min stack.</p>
 <p>As a solution, it is used when we need to stash previous results, and then need to solve most recent problems first or need to use most recent problem&rsquo;s results to solve previous stashed problems.</p>
 <p>Function calling uses stack to stash all activated functions. Thus, stack can be used to translate recursive algorithm into iteration algorithm.</p>
 <p>Some problems need to generate results with most recent values because of rules of the problems. Then we may need to use stack to solve it, like largest rectangle in Historgram.</p>
 <h4 id="queue"><a name="user-content-queue" href="#queue" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Queue</h4>
+<p>In contrast, queue is a <strong>FIFO</strong>(First in First out) structure. It is often used to stash results and then still pop stashed results in the original order. A well-known usage is <a href="#breadth-first-search">Bread First Search</a>.</p>
+<p>Also queue is a good data structure for multithreading or tasks management.</p>
+<p>Queue is rarely used as a solution except BFS. In my opinion, it is because we usually like to iterate a collection from the start to the end and it is simple.</p>
 <h3 id="tree"><a name="user-content-tree" href="#tree" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Tree</h3>
 <h3 id="graph"><a name="user-content-graph" href="#graph" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Graph</h3>
 <h2 id="algorithms"><a name="user-content-algorithms" href="#algorithms" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Algorithms:</h2>
 <p>Baisc algorithms which can be used to solve some problems efficiently.</p>
 <h3 id="iteration"><a name="user-content-iteration" href="#iteration" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Iteration</h3>
+<p>Basic algorithm to do a repeating process to solve a problem, typically traverse a collection of elements.</p>
+<h4 id="two-pointers"><a name="user-content-two-pointers" href="#two-pointers" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Two Pointers</h4>
+<p>Instead of basic one pointer iteration, two pointers can really be a good solution to some problems. Two pointers can be considered as a <strong>Window</strong>. The <strong>fast and slow pointers</strong> can be used to solve some linked list problems. Or sometimes one pointers is not enough to cache data like <strong><em>3 Sums</em></strong>.</p>
 <h3 id="recursion"><a name="user-content-recursion" href="#recursion" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Recursion</h3>
-<h3 id="two-pointers"><a name="user-content-two-pointers" href="#two-pointers" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Two Pointers</h3>
-<h3 id="greedy"><a name="user-content-greedy" href="#greedy" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Greedy</h3>
 <h3 id="divider-and-conquer"><a name="user-content-divider-and-conquer" href="#divider-and-conquer" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Divider and Conquer</h3>
+<h3 id="binary-search"><a name="user-content-binary-search" href="#binary-search" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Binary Search</h3>
+<p>Binary search is a classic algorithm which half divides problem until to an end case. Get the results for the unit subproblem and then pop up the results as the final results. A difference from other D&amp;C algorithms or characteristic of binary search is that binary search usually get the result from one single subproblem, instead of doing futher maths or logics when returns.</p>
+<h3 id="greedy"><a name="user-content-greedy" href="#greedy" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Greedy</h3>
 <h3 id="backtracking"><a name="user-content-backtracking" href="#backtracking" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Backtracking</h3>
 <h3 id="branch-bound"><a name="user-content-branch-bound" href="#branch-bound" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Branch bound</h3>
 <h3 id="breadth-first-search"><a name="user-content-breadth-first-search" href="#breadth-first-search" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Breadth first search</h3>

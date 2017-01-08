@@ -1,26 +1,64 @@
 # Basic algorithms and data structures
-This notes contain my personal's understanding for some basic algorithms and data structures, and how to apply them to problems.
+This note contains my personal's understanding for some basic algorithms and data structures, and how to apply them to specifc problems.
 
 ## Data structures:
-Basic data structures whose properpies can be utilized to solve algorithm problems.
+Basic data structures whose properties can be utilized to solve algorithm problems.
 
 ### Array and Strings
 ####[Array](https://en.wikipedia.org/wiki/Array_data_structure)
 a collection of elements, which is accessed by index. It usually has a fixed size.
 
-It may be the first choice for most of algorithm problem. But it's not a good choice, if the size of elements can not be determined or the collection needs to do a search for values frequently.
+It may be the first choice for most of algorithm problems. But it's not a good choice, if the size of elements can not be determined or the collection frequently needs to do a search for values.
 
 ####[String](https://en.wikipedia.org/wiki/String_(computer_science))
-a squence of characters, like an array of charachers. But in some programming language String is immutable.
+a sequence of characters, like an array of charachers. But in some programming languages, String is immutable.
 
 ##### Algorithm problems about string minipulation.
 String algorithms usually are similar with array problems. Differences:
 
-* String concatenation is easier than array, but if a solution may need to frequently concatenate string, StringBuffer and StringBuilder are good choices.
-* Immutable string is not mutable like array. If a solution needs to change some characters in a string, a good choice is to split string to character and array, and parse it back after minipulation.
+* String concatenation is easier than array, but if a solution may need to frequently concatenate strings, StringBuffer and StringBuilder are better choices.
+* Immutable string is not mutable like array. If a solution needs to change some characters in a string, a good choice is to split string into characters array, and parse it back after minipulation.
 
 ##### String tricks.
-* I'd like to use string instead of int to deal with math algorithm problems, because it can simplify overflow cases.
+* I'd like to use string instead of int to deal with math or bit manipulation algorithm problems, because it can simplify overflow cases.
+
+### Hash table and Hash set
+
+Hash table is a key-value pairs collection data structure. Given a key, hash table can search the corresponding value in O(1) time complexity. It is a rock star in algorithm problems.
+Hash set is a collection of values where searching for an element by value is very fast.
+
+#### Usages of Hash set
+
+* A bucket when you want to find if an element exists.
+* Keep uniqueness of elements in a collection.
+
+#### Usages of Hash table
+
+* __Reverse array, value to index__
+Use value to find location. _Why need this?_ Some question ask you to do some thing related to index or location(distance between two elements).
+
+* __Word count__
+Key maps to count.
+
+* __Group elements__
+Group elements by value or any other properties.
+
+* __Graph__
+One simple way to implement graph is to use hash map.
+
+* __Trie__
+Hash table can build Trie
+
+* __Use as an object(like js) without functions__
+
+#### Implementation of Hash table
+* Collision
+    * Chaining(list)
+    * Open addressing(probing)
+* Use BST
+    1. small initial size
+    2. lg(n) time
+* 
 
 ### Linked List and Array List
 #### Linked List
@@ -56,7 +94,7 @@ solution: link target node to next node first, then append target node to the pr
 Keypoint: Use dummy node as the head pointer. Keep insert node after dummy to push existing list. Don't lose the current node's next node. 
 
     dummy = Node.new
-    t = p.next, p.next = dummy.next, dummy.next = p
+        t = p.next, p.next = dummy.next, dummy.next = p
 
 * Detect loop and find loop start node:
     * __Detect__:
@@ -78,7 +116,8 @@ Special cases include: LRU(Not the best solution.)
 ### Stack and Queue
 
 #### Stack
-Stack is a LIFO(last in first out) data structure. Two classic problems for stack are implementing a stack and implementing min stack.
+
+Stack is a __LIFO__(Last in First out) data structure. Two classic problems for stack are implementing a stack and implementing min stack.
 
 As a solution, it is used when we need to stash previous results, and then need to solve most recent problems first or need to use most recent problem's results to solve previous stashed problems.
 
@@ -88,9 +127,15 @@ Some problems need to generate results with most recent values because of rules 
 
 #### Queue
 
+In contrast, queue is a __FIFO__(First in First out) structure. It is often used to stash results and then still pop stashed results in the original order. A well-known usage is [Bread First Search](#breadth-first-search).
 
+Also queue is a good data structure for multithreading or tasks management.
+
+Queue is rarely used as a solution except BFS. In my opinion, it is because we usually like to iterate a collection from the start to the end and it is simple.
 
 ### Tree
+
+
 
 ### Graph
 
@@ -100,13 +145,23 @@ Baisc algorithms which can be used to solve some problems efficiently.
  
 ### Iteration
 
+Basic algorithm to do a repeating process to solve a problem, typically traverse a collection of elements.
+
+#### Two Pointers
+
+Instead of basic one pointer iteration, two pointers can really be a good solution to some problems. Two pointers can be considered as a __Window__. The __fast and slow pointers__ can be used to solve some linked list problems. Or sometimes one pointers is not enough to cache data like ___3 Sums___.
+
 ### Recursion
 
-### Two Pointers
+### Divider and Conquer
+
+### Binary Search
+
+Binary search is a classic algorithm which half divides problem until to an end case. Get the results for the unit subproblem and then pop up the results as the final results. A difference from other D&C algorithms or characteristic of binary search is that binary search usually get the result from one single subproblem, instead of doing futher maths or logics when returns.
 
 ### Greedy
 
-### Divider and Conquer
+
 
 ### Backtracking
 
